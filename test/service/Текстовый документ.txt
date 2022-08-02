@@ -1,0 +1,18 @@
+cd ~/newproject
+python -m venv venv
+venv\Scripts\activate
+python manage.py makemigrations
+python manage.py migrate
+celery -A service worker -l info
+python manage.py runserver
+python manage.py test
+
+
+
+http://127.0.0.1:8000/docs/
+http://127.0.0.1:8000/api/clients/
+http://127.0.0.1:8000/api/mailings/
+http://127.0.0.1:8000/api/mailings/fullinfo/
+http://127.0.0.1:8000/api/mailings/<pk>/info/
+http://127.0.0.1:8000/api/messages/
+http://127.0.0.1:8000/docs/
